@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lala Lajpat Rai College | Fee Payment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand__logo">LLRC</div>
+      <div>
+        <div class="brand__title">Lala Lajpatrai College</div>
+        <div class="brand__subtitle">Secure Fee Payment Portal</div>
+      </div>
+    </div>
+    <div class="topbar__meta">
+      <span class="pill">Academic Year 2025-26</span>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="card" id="form-card">
+      <div class="card__header">
+        <div>
+          <p class="eyebrow">Step 1</p>
+          <h1>Student & Contact Details</h1>
+          <p class="muted">Provide your enrollment information to match the payment with your student record.</p>
+        </div>
+      </div>
+      <form id="payment-form">
+        <div class="grid">
+          <label class="field">
+            <span>Student Name</span>
+            <input type="text" name="studentName" placeholder="Full name" required>
+          </label>
+          <label class="field">
+            <span>Student ID / Roll No.</span>
+            <input type="text" name="studentId" placeholder="e.g., LLRC2025-1234" required>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label class="field">
+            <span>Mobile</span>
+            <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+          </label>
+          <label class="field">
+            <span>Course</span>
+            <input type="text" name="course" placeholder="B.Com / B.Sc / BCA" required>
+          </label>
+          <label class="field">
+            <span>Semester</span>
+            <select name="semester" required>
+              <option value="">Select semester</option>
+              <option value="I">I</option>
+              <option value="II">II</option>
+              <option value="III">III</option>
+              <option value="IV">IV</option>
+              <option value="V">V</option>
+              <option value="VI">VI</option>
+             
+            </select>
+          </label>
+        </div>
+
+        <div class="card__section">
+          <div>
+            <p class="eyebrow">Step 2</p>
+            <h2>Fee Selection</h2>
+            <p class="muted">Choose the components you want to pay now. Amounts are editable.</p>
+          </div>
+          <div class="fee-items">
+            <div class="fee-item">
+              <label class="checkbox">
+                <input type="checkbox" name="tuition" checked data-amount="25000">
+                <span>Tuition Fee</span>
+              </label>
+              <input type="number" name="tuitionAmount" value="25000" min="0" step="100">
+            </div>
+            <div class="fee-item">
+              <label class="checkbox">
+                <input type="checkbox" name="hostel" data-amount="18000">
+                <span>Hostel Fee</span>
+              </label>
+              <input type="number" name="hostelAmount" value="18000" min="0" step="100">
+            </div>
+            <div class="fee-item">
+              <label class="checkbox">
+                <input type="checkbox" name="library" data-amount="2000">
+                <span>Library & Lab</span>
+              </label>
+              <input type="number" name="libraryAmount" value="2000" min="0" step="50">
+            </div>
+            <div class="fee-item">
+              <label class="checkbox">
+                <input type="checkbox" name="exam" checked data-amount="1500">
+                <span>Exam Fee</span>
+              </label>
+              <input type="number" name="examAmount" value="1500" min="0" step="50">
+            </div>
+          </div>
+        </div>
+
+        <div class="card__section">
+          <div>
+            <p class="eyebrow">Step 3</p>
+            <h2>Bank Details (for debiting)</h2>
+            <p class="muted">Entered data stays on this page only. Integrate with your bank/payments gateway for live processing.</p>
+          </div>
+          <div class="grid">
+            <label class="field">
+              <span>Account Holder Name</span>
+              <input type="text" name="accountName" placeholder="As per bank records" required>
+            </label>
+            <label class="field">
+              <span>Account Number</span>
+              <input type="text" name="accountNumber" placeholder="16-digit account number" required>
+            </label>
+            <label class="field">
+              <span>IFSC Code</span>
+              <input type="text" name="ifsc" placeholder="e.g., HDFC0001234" required>
+            </label>
+            <label class="field">
+              <span>Bank Name</span>
+              <input type="text" name="bankName" placeholder="Bank name" required>
+            </label>
+            <label class="field">
+              <span>Branch</span>
+              <input type="text" name="branch" placeholder="Branch / City" required>
+            </label>
+            <label class="field">
+              <span>Payment Mode</span>
+              <select name="paymentMode" required>
+                <option value="">Select mode</option>
+                <option value="netbanking">Net Banking</option>
+                <option value="debit">Debit Card</option>
+                <option value="credit">Credit Card</option>
+                <option value="upi">UPI</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="card__section">
+          <div class="summary">
+            <div>
+              <p class="eyebrow">Step 4</p>
+              <h2>Review & Confirm</h2>
+              <p class="muted">Totals update automatically. Click confirm to simulate a payment.</p>
+            </div>
+            <div class="summary__box">
+              <div class="summary__row">
+                <span>Subtotal</span>
+                <strong id="subtotal">₹0</strong>
+              </div>
+              <div class="summary__row">
+                <span>Processing (1.25%)</span>
+                <strong id="processing">₹0</strong>
+              </div>
+              <div class="summary__row summary__row--total">
+                <span>Amount Payable</span>
+                <strong id="total">₹0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <label class="checkbox">
+            <input type="checkbox" name="consent" required>
+            <span>I confirm the above details are correct and authorize the debit for college fees.</span>
+          </label>
+          <button type="submit" class="btn-primary">Confirm & Pay (.)</button>
+          <p class="muted tiny">This is a .-only page. For production, connect to a certified payment gateway and never store bank data without compliance.</p>
+        </div>
+      </form>
+    </section>
+
+    <section id="status" class="card card--status hidden">
+      <div class="status__icon">✓</div>
+      <div>
+        <h2>Payment initiated (.)</h2>
+        <p id="status-text" class="muted">Your payment details have been captured locally. In production, this would be securely sent to a PCI-DSS compliant gateway.</p>
+      </div>
+      <button class="btn-link" id="reset-btn">Make another payment</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>Need help?</strong>
+      <p>Email bursar@llrc.edu or call +91-22-1234-5678 (Mon–Fri, 10am–5pm).</p>
+    </div>
+    <div class="muted tiny">. environment · Do not use real bank credentials.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
