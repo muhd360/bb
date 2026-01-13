@@ -14,22 +14,11 @@ const subtotalNode = document.getElementById("subtotal");
 const processingNode = document.getElementById("processing");
 const totalNode = document.getElementById("total");
 
-const feeItems = Array.from(document.querySelectorAll(".fee-item"));
+const BASE_TUITION = 25500;
 
 function recalcTotals() {
-  let subtotal = 0;
-
-  feeItems.forEach((row) => {
-    const checkbox = row.querySelector('input[type="checkbox"]');
-    const amountInput = row.querySelector('input[type="number"]');
-    const amount = Math.max(0, Number(amountInput.value) || 0);
-
-    if (checkbox.checked) {
-      subtotal += amount;
-    }
-  });
-
-  const processing = Math.round(subtotal * 0.0125);
+  const subtotal = BASE_TUITION;
+  const processing = Math.round(subtotal * 0.0025);
   const total = subtotal + processing;
 
   subtotalNode.textContent = currency.format(subtotal);
@@ -56,14 +45,6 @@ function buildSummary(data) {
 }
 
 function attachListeners() {
-  feeItems.forEach((row) => {
-    const checkbox = row.querySelector('input[type="checkbox"]');
-    const amountInput = row.querySelector('input[type="number"]');
-
-    checkbox.addEventListener("change", recalcTotals);
-    amountInput.addEventListener("input", recalcTotals);
-  });
-
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
@@ -85,16 +66,6 @@ function attachListeners() {
 }
 
 function init() {
-  // Initialize default amounts from data attributes when present
-  feeItems.forEach((row) => {
-    const checkbox = row.querySelector('input[type="checkbox"]');
-    const amountInput = row.querySelector('input[type="number"]');
-    const preset = Number(checkbox.dataset.amount || amountInput.value || 0);
-    if (!amountInput.value) {
-      amountInput.value = preset || 0;
-    }
-  });
-
   attachListeners();
   recalcTotals();
 }

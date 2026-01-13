@@ -72,37 +72,23 @@
         <div class="card__section">
           <div>
             <p class="eyebrow">Step 2</p>
-            <h2>Fee Selection</h2>
-            <p class="muted">Choose the components you want to pay now. Amounts are editable.</p>
+            <h2>Fee Details</h2>
+            <p class="muted">Tuition fee for this term is fixed.</p>
           </div>
           <div class="fee-items">
             <div class="fee-item">
-              <label class="checkbox">
-                <input type="checkbox" name="tuition" checked data-amount="25000">
-                <span>Tuition Fee</span>
-              </label>
-              <input type="number" name="tuitionAmount" value="25000" min="0" step="100">
-            </div>
-            <div class="fee-item">
-              <label class="checkbox">
-                <input type="checkbox" name="hostel" data-amount="18000">
-                <span>Hostel Fee</span>
-              </label>
-              <input type="number" name="hostelAmount" value="18000" min="0" step="100">
-            </div>
-            <div class="fee-item">
-              <label class="checkbox">
-                <input type="checkbox" name="library" data-amount="2000">
-                <span>Library & Lab</span>
-              </label>
-              <input type="number" name="libraryAmount" value="2000" min="0" step="50">
-            </div>
-            <div class="fee-item">
-              <label class="checkbox">
-                <input type="checkbox" name="exam" checked data-amount="1500">
-                <span>Exam Fee</span>
-              </label>
-              <input type="number" name="examAmount" value="1500" min="0" step="50">
+              <div class="checkbox">
+                <span>Tuition Fee (fixed)</span>
+              </div>
+              <input
+                type="number"
+                name="tuitionAmount"
+                value="25500"
+                min="0"
+                step="100"
+                readonly
+                disabled
+              >
             </div>
           </div>
         </div>
@@ -152,7 +138,7 @@
             <div>
               <p class="eyebrow">Step 4</p>
               <h2>Review & Confirm</h2>
-              <p class="muted">Totals update automatically. Click confirm to simulate a payment.</p>
+              <p class="muted">Totals update automatically. Click confirm</p>
             </div>
             <div class="summary__box">
               <div class="summary__row">
@@ -160,7 +146,7 @@
                 <strong id="subtotal">₹0</strong>
               </div>
               <div class="summary__row">
-                <span>Processing (1.25%)</span>
+                <span>Processing (0.25%)</span>
                 <strong id="processing">₹0</strong>
               </div>
               <div class="summary__row summary__row--total">
@@ -176,7 +162,7 @@
             <input type="checkbox" name="consent" required>
             <span>I confirm the above details are correct and authorize the debit for college fees.</span>
           </label>
-          <button type="submit" class="btn-primary">Confirm & Pay (.)</button>
+          <button type="submit" class="btn-primary">Confirm & Pay</button>
           <p class="muted tiny">This is a .-only page. For production, connect to a certified payment gateway and never store bank data without compliance.</p>
         </div>
       </form>
@@ -197,7 +183,7 @@
       <strong>Need help?</strong>
       <p>Email bursar@llrc.edu or call +91-22-1234-5678 (Mon–Fri, 10am–5pm).</p>
     </div>
-    <div class="muted tiny">. environment · Do not use real bank credentials.</div>
+    <div class="muted tiny">. environment ·</div>
   </footer>
 
   <script src="script.js"></script>
