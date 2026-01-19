@@ -169,10 +169,10 @@
     </section>
 
     <section id="status" class="card card--status hidden">
-      <div class="status__icon">✓</div>
+      <div class="status__icon" id="status-icon">…</div>
       <div>
-        <h2>Payment initiated (.)</h2>
-        <p id="status-text" class="muted">Your payment details have been captured locally. In production, this would be securely sent to a PCI-DSS compliant gateway.</p>
+        <h2 id="status-title">Processing payment...</h2>
+        <p id="status-text" class="muted">Please wait while we try to confirm with the bank.</p>
       </div>
       <button class="btn-link" id="reset-btn">Make another payment</button>
     </section>
